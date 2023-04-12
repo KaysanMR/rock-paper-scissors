@@ -1,20 +1,16 @@
-// Rock Paper Scissors game
+// Rock Paper Scissors game by Kaysan M. Rifath
+
 const CHOICES = ['rock', 'paper', 'scissors']
 let playerScore = 0;
 let computerScore = 0;
 
-//start game
 game();
 
-
-// randomize computer choice
 function getComputerChoice() {
     let choice = Math.floor( Math.random()*3);
     return CHOICES[choice];
 }
 
-// get player choice and validate input
-//this can be removed/modified once a GUI is implemented
 function getPlayerChoice(){
     let playerChoice = prompt('Rock, Paper or Scissors?');
     if (CHOICES.includes(playerChoice.toLowerCase()) && playerChoice != '') { 
@@ -27,7 +23,7 @@ function getPlayerChoice(){
 }
 
 // decide on the winner
-function round(playerChoice, computerChoice) {
+function winner(playerChoice, computerChoice) {
     if (playerChoice === computerChoice) {
         return result = (`It's a tie!`);
     } else if (playerChoice === 'rock' && computerChoice === 'scissors') {
@@ -57,20 +53,19 @@ function round(playerChoice, computerChoice) {
 //Play 5 rounds, announce score & winner
 function game(){
     if (playerScore <= 2 && computerScore <= 2){
-        // get choices ready
+
         let playerChoice = getPlayerChoice();
         let computerChoice = getComputerChoice();
 
         // calculate the winner of the round
-        round(playerChoice,computerChoice);
+        winner(playerChoice,computerChoice);
 
-        // end of round
         console.log(`You chose ${playerChoice}, \n The computer chose ${computerChoice}.`);
         console.log(result);
         console.log(`Player: ${playerScore} \n Computer: ${computerScore}`)
         return game();
 
-    } else { //announce game winner and prompt replay
+    } else {
         if(playerScore > computerScore) {
             return (console.log('YOU WIN!'), replay());
         } else {
@@ -81,7 +76,7 @@ function game(){
 
 function replay() {
     if (confirm('Play Again?')) {
-        playerScore = 0; //reset both scores for new game
+        playerScore = 0;
         computerScore = 0;
         game();
     } else {

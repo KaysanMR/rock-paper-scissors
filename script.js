@@ -20,7 +20,7 @@ function getPlayerChoice(){
         playerChoice = playerChoice.toLowerCase(); //convert input to only lowercase
         return playerChoice;
     } else {
-        return (alert(`${playerChoice = 'null'} is not valid, please try again.`),
+        return (alert(`${playerChoice} is not a valid input, please try again.`),
             getPlayerChoice());
     } 
 }

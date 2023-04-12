@@ -56,14 +56,17 @@ function round(playerChoice, computerChoice) {
 //Play 5 rounds, announce score & winner
 function game(){
     if (playerScore <= 2 && computerScore <= 2){
+        // get choices ready
         let playerChoice = getPlayerChoice();
         let computerChoice = getComputerChoice();
+        // calculate the winner of the round
         round(playerChoice,computerChoice);
+        // end of round
         console.log(`You chose ${playerChoice}, \n The computer chose ${computerChoice}.`);
         console.log(result);
         console.log(`Player: ${playerScore} \n Computer: ${computerScore}`)
         return game();
-    } else {
+    } else { //announce game winner and prompt replay
         if(playerScore > computerScore) {
             return (console.log('YOU WIN!'), replay());
         } else {
@@ -74,7 +77,7 @@ function game(){
 
 function replay() {
     if (confirm('Play Again?')) {
-        playerScore = 0;
+        playerScore = 0; //reset both scores for new game
         computerScore = 0;
         game();
     } else {

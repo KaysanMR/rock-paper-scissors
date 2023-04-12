@@ -1,5 +1,8 @@
 // Rock Paper Scissors game
 const CHOICES = ['rock', 'paper', 'scissors']
+let playerScore = 0;
+let computerScore = 0;
+
 
 // randomize computer choice
 function getComputerChoice() {
@@ -10,11 +13,11 @@ function getComputerChoice() {
 // get player choice and validate input (not working)
 function getPlayerChoice(){
     let playerChoice = prompt('Rock, Paper or Scissors?');
-    playerChoice = playerChoice.toLowerCase(); //convert input to only lowercase
-    if (CHOICES.includes(playerChoice)) {
-        return result = playerChoice; //this works when it runs the first time, but not when running again.
+    if (CHOICES.includes(playerChoice.toLowerCase()) && playerChoice != '') {
+        playerChoice = playerChoice.toLowerCase(); //convert input to only lowercase
+        return playerChoice;
     } else {
-        return (alert(`${playerChoice} is not valid, please try again.`),
+        return (alert(`${playerChoice = 'null'} is not valid, please try again.`),
             getPlayerChoice());
     } 
 }
@@ -36,10 +39,34 @@ function round(playerChoice, computerChoice) {
         lose();
     };
     function win(){
+        playerScore ++
         return result = (`You win! ${playerChoice} beats ${computerChoice}!`);
     }
     function lose(){
+        computerScore ++
         return result = (`You lose! ${computerChoice} beats ${playerChoice}!`);
     }
+    //make sure the actual function returns the result
     return result;
 }
+
+//Play 5 rounds, announce score & winner
+function game(){
+    if (playerScore <= 2 && computerScore <= 2){
+        let playerChoice = getPlayerChoice();
+        let computerChoice = getComputerChoice();
+        round(playerChoice,computerChoice);
+        console.log(`You chose ${playerChoice}, \n The computer chose ${computerChoice}.`);
+        console.log(result);
+        console.log(`Player: ${playerScore} \n Computer: ${computerScore}`)
+        return game();
+    } else {
+        if(playerScore > computerScore) {
+            return console.log('YOU WIN!')
+        } else {
+            return console.log('YOU LOSE :(')
+        }
+    }
+}
+
+game();

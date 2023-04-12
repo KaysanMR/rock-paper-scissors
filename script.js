@@ -3,6 +3,9 @@ const CHOICES = ['rock', 'paper', 'scissors']
 let playerScore = 0;
 let computerScore = 0;
 
+//start game
+game();
+
 
 // randomize computer choice
 function getComputerChoice() {
@@ -62,11 +65,19 @@ function game(){
         return game();
     } else {
         if(playerScore > computerScore) {
-            return console.log('YOU WIN!')
+            return (console.log('YOU WIN!'), replay());
         } else {
-            return console.log('YOU LOSE :(')
+            return (console.log('YOU LOSE :('),replay());
         }
     }
 }
 
-game();
+function replay() {
+    if (confirm('Play Again?')) {
+        playerScore = 0;
+        computerScore = 0;
+        game();
+    } else {
+        console.log('Thank you for playing!')
+    }
+}

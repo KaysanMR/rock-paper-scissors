@@ -13,10 +13,11 @@ function getComputerChoice() {
     return CHOICES[choice];
 }
 
-// get player choice and validate input (not working)
+// get player choice and validate input
+//this can be removed/modified once a GUI is implemented
 function getPlayerChoice(){
     let playerChoice = prompt('Rock, Paper or Scissors?');
-    if (CHOICES.includes(playerChoice.toLowerCase()) && playerChoice != '') {
+    if (CHOICES.includes(playerChoice.toLowerCase()) && playerChoice != '') { 
         playerChoice = playerChoice.toLowerCase(); //convert input to only lowercase
         return playerChoice;
     } else {
@@ -59,13 +60,16 @@ function game(){
         // get choices ready
         let playerChoice = getPlayerChoice();
         let computerChoice = getComputerChoice();
+
         // calculate the winner of the round
         round(playerChoice,computerChoice);
+
         // end of round
         console.log(`You chose ${playerChoice}, \n The computer chose ${computerChoice}.`);
         console.log(result);
         console.log(`Player: ${playerScore} \n Computer: ${computerScore}`)
         return game();
+
     } else { //announce game winner and prompt replay
         if(playerScore > computerScore) {
             return (console.log('YOU WIN!'), replay());

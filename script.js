@@ -7,20 +7,17 @@ function getComputerChoice() {
     return CHOICES[choice];
 }
 
-// get player choice and validate input
+// get player choice and validate input (not working)
 function getPlayerChoice(){
     let playerChoice = prompt('Rock, Paper or Scissors?');
     playerChoice = playerChoice.toLowerCase(); //convert input to only lowercase
     if (CHOICES.includes(playerChoice)) {
-        return playerChoice; //this works when it runs the first time, but not when running again.
+        return result = playerChoice; //this works when it runs the first time, but not when running again.
     } else {
-        alert(`${playerChoice} is not valid, please try again.`);
-        getPlayerChoice();
+        return (alert(`${playerChoice} is not valid, please try again.`),
+            getPlayerChoice());
     } 
 }
-
-console.log(getPlayerChoice());
-
 
 // decide on the winner
 function round(playerChoice, computerChoice) {

@@ -4,26 +4,53 @@ const CHOICES = ['rock', 'paper', 'scissors']
 let playerScore = 0;
 let computerScore = 0;
 
-game();
-
 function getComputerChoice() {
     let choice = Math.floor( Math.random()*3);
     return CHOICES[choice];
-}
+};
 
-function getPlayerChoice(){
-    let playerChoice = prompt('Rock, Paper or Scissors?');
-    if (CHOICES.includes(playerChoice.toLowerCase()) && playerChoice != '') { 
-        playerChoice = playerChoice.toLowerCase(); //convert input to only lowercase
-        return playerChoice;
-    } else {
-        return (alert(`${playerChoice} is not a valid input, please try again.`),
-            getPlayerChoice());
-    } 
-}
+
+const button = document.querySelectorAll('#btn');
+button.forEach(button => {
+    button.addEventListener('click',(e) => {
+        let playerChoice = (e.target.innerHTML.toLowerCase());
+        round(playerChoice,getComputerChoice());
+        console.log(result);
+    });
+});
+
+// let playerChoice = () => {
+//     let rock = document.querySelector('.rock')
+//     rock.addEventListener('click', () => {
+//         return 'rock';
+//     });
+    
+//     let paper = document.querySelector('.paper')
+//     paper.addEventListener('click', () => {
+//         return 'paper';
+//     });
+    
+//     let scissors = document.querySelector('.scissors')
+//     scissors.addEventListener('click', () => {
+//         return 'scissors';
+//     });
+// };
+
+
+// function getPlayerChoice(){
+
+//     // let playerChoice = prompt('Rock, Paper or Scissors?');
+//     // if (CHOICES.includes(playerChoice.toLowerCase()) && playerChoice != '') { 
+//     //     playerChoice = playerChoice.toLowerCase(); //convert input to only lowercase
+//     //     return playerChoice;
+//     // } else {
+//     //     return (alert(`${playerChoice} is not a valid input, please try again.`),
+//     //         getPlayerChoice());
+//     // } 
+// }
 
 // decide on the winner
-function winner(playerChoice, computerChoice) {
+function round(playerChoice, computerChoice) {
     if (playerChoice === computerChoice) {
         return result = (`It's a tie!`);
     } else if (playerChoice === 'rock' && computerChoice === 'scissors') {
@@ -51,28 +78,28 @@ function winner(playerChoice, computerChoice) {
 }
 
 //Play 5 rounds, announce score & winner
-function game(){
-    if (playerScore <= 2 && computerScore <= 2){
+// function game(){
+//     if (playerScore <= 2 && computerScore <= 2){
 
-        let playerChoice = getPlayerChoice();
-        let computerChoice = getComputerChoice();
+//         playerChoice();
+//         let computerChoice = getComputerChoice();
 
-        // calculate the winner of the round
-        winner(playerChoice,computerChoice);
+//         // calculate the winner of the round
+//         winner(playerChoice,computerChoice);
 
-        console.log(`You chose ${playerChoice}, \n The computer chose ${computerChoice}.`);
-        console.log(result);
-        console.log(`Player: ${playerScore} \n Computer: ${computerScore}`)
-        return game();
+//         console.log(`You chose ${playerChoice}, \n The computer chose ${computerChoice}.`);
+//         console.log(result);
+//         console.log(`Player: ${playerScore} \n Computer: ${computerScore}`)
+//         return game();
 
-    } else {
-        if(playerScore > computerScore) {
-            return (console.log('YOU WIN!'), replay());
-        } else {
-            return (console.log('YOU LOSE :('),replay());
-        }
-    }
-}
+//     } else {
+//         if(playerScore > computerScore) {
+//             return (console.log('YOU WIN!'), replay());
+//         } else {
+//             return (console.log('YOU LOSE :('),replay());
+//         }
+//     }
+// }
 
 function replay() {
     if (confirm('Play Again?')) {

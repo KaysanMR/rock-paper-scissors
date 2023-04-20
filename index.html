@@ -5,22 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="style.css">
     <!-- <script src="script.js" defer></script> -->
 </head>
-<body>
-    <header>
-        <h1>Rock Paper Scissors</h1>
-        <a href="https://github.com/KaysanMR/">github.com/KaysanMR</a>
+<body class="flex">
+    <header class="flex">
+        <h1 class="bigText">Rock/Paper/Scissors</h1>
     </header>
-    <div class="game">
-        <div class="result">X Wins the round!</div>
-        <div class="player score">PLAYER:</div>
-        <div class="computer score">COMPUTER:</div>
-        <div class="choices">
+    <div class="game flex">
+        <div class="gameText">
+            <div class="log flex">
+                <p>You played rock.</p>
+                <p>The computer played scissors.</p>
+            </div>
+            <div class="message bigText">You win the round!</div>
+            <div class="player score">you:</div>
+            <div class="computer score">computer:</div>
+        </div>
+        <div class="choices flex">
             <button class="rock">Rock</button>
             <button class="paper">Paper</button>
             <button class="scissors">Scissors</button>
         </div>
     </div>
+    <footer class="flex"><a href="https://github.com/KaysanMR/" class="bigText">github.com/KaysanMR</a></footer>
 </body>
 </html>

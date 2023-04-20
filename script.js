@@ -9,45 +9,29 @@ function getComputerChoice() {
     return CHOICES[choice];
 };
 
+const message = document.querySelector('.message');
+message.textContent = 'Welcome to Rock Paper Scissors!';
+
+const log = document.querySelector('.log');
+log.textContent = 'choose an option to begin :)'
+
+const scoreboard = document.querySelector('.score');
 
 const button = document.querySelectorAll('#btn');
 button.forEach(button => {
     button.addEventListener('click',(e) => {
         let playerChoice = (e.target.innerHTML.toLowerCase());
-        round(playerChoice,getComputerChoice());
-        console.log(result);
+        let computerChoice = getComputerChoice();
+
+        round(playerChoice,computerChoice);
+
+        message.textContent = result;
+        log.innerHTML = (`You chose ${playerChoice}, <n> The computer chose ${computerChoice}.`);
+        scoreboard.innerHTML = (`you: ${playerScore} computer: ${computerScore}`);
     });
 });
 
-// let playerChoice = () => {
-//     let rock = document.querySelector('.rock')
-//     rock.addEventListener('click', () => {
-//         return 'rock';
-//     });
-    
-//     let paper = document.querySelector('.paper')
-//     paper.addEventListener('click', () => {
-//         return 'paper';
-//     });
-    
-//     let scissors = document.querySelector('.scissors')
-//     scissors.addEventListener('click', () => {
-//         return 'scissors';
-//     });
-// };
 
-
-// function getPlayerChoice(){
-
-//     // let playerChoice = prompt('Rock, Paper or Scissors?');
-//     // if (CHOICES.includes(playerChoice.toLowerCase()) && playerChoice != '') { 
-//     //     playerChoice = playerChoice.toLowerCase(); //convert input to only lowercase
-//     //     return playerChoice;
-//     // } else {
-//     //     return (alert(`${playerChoice} is not a valid input, please try again.`),
-//     //         getPlayerChoice());
-//     // } 
-// }
 
 // decide on the winner
 function round(playerChoice, computerChoice) {
@@ -77,6 +61,48 @@ function round(playerChoice, computerChoice) {
     return result;
 }
 
+function replay() {
+    if (confirm('Play Again?')) {
+        playerScore = 0;
+        computerScore = 0;
+        game();
+    } else {
+        console.log('Thank you for playing!')
+    }
+}
+
+//legacy functions
+
+// let playerChoice = () => {
+//     let rock = document.querySelector('.rock')
+//     rock.addEventListener('click', () => {       
+//         return 'rock';
+//     });
+    
+//     let paper = document.querySelector('.paper')
+//     paper.addEventListener('click', () => {
+//         return 'paper';
+//     });
+    
+//     let scissors = document.querySelector('.scissors')
+//     scissors.addEventListener('click', () => {
+//         return 'scissors';
+//     });
+// };
+
+
+// function getPlayerChoice(){
+
+//     // let playerChoice = prompt('Rock, Paper or Scissors?');
+//     // if (CHOICES.includes(playerChoice.toLowerCase()) && playerChoice != '') { 
+//     //     playerChoice = playerChoice.toLowerCase(); //convert input to only lowercase
+//     //     return playerChoice;
+//     // } else {
+//     //     return (alert(`${playerChoice} is not a valid input, please try again.`),
+//     //         getPlayerChoice());
+//     // } 
+// }
+
 //Play 5 rounds, announce score & winner
 // function game(){
 //     if (playerScore <= 2 && computerScore <= 2){
@@ -100,13 +126,3 @@ function round(playerChoice, computerChoice) {
 //         }
 //     }
 // }
-
-function replay() {
-    if (confirm('Play Again?')) {
-        playerScore = 0;
-        computerScore = 0;
-        game();
-    } else {
-        console.log('Thank you for playing!')
-    }
-}

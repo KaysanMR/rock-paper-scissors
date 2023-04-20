@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,600;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@2,600;1,300;0,100;&display=swap');
 
 *{
     margin: 0;
@@ -9,62 +9,84 @@
 body {
     min-height: 100dvh;
     background-color: rgb(255, 253, 250);
-    color: rgb(17, 68, 38);
-    padding: 0 10%;
+    color: hsl(145, 60%, 25%);
     flex-direction: column;
 }
 
 .flex {
     display: flex;
+    flex-direction: column;
 }
 
-header {
-    flex-direction: row;
+header, footer {
+    text-align: center;
     margin: 1.5rem 0;
-}
-footer {
-    margin: 1.5rem 0;
-    justify-content: flex-end;
 }
 
 .bigText {
-    font-size: 30px;
-    font-weight: bold;
-    color: rgb(41, 39, 39);
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: hsl(0, 30%, 25%);
     text-decoration: none;
 }
 
 .game {
-    font-weight: 300;
-    justify-content: center;
+    margin: 0 20%;
+    justify-content: space-around;
     flex: 1;
-    flex-direction: column;
 }
 
 .gameText {
-    margin-left: 5rem;
-}
-
-.choices {
+    gap: 1rem;
 }
 
 .log {
     flex-direction: column;
 }
 
+.choices {
+    justify-content: space-between;
+    gap: 1rem;
+}
+
 button {
-    font-weight: bold;
-    font-size: 20px;
+    flex: 1;
+    gap: 1rem;
+
+    font-size: 1.5rem;
+    font-weight: lighter;
+    text-align: center;
+
     color: rgb(255, 253, 250);
     background-color: hsl(36, 100%, 63%);
-    min-width:100px;
     border: none;
     border-radius: 0.5rem;
     padding: 0.5rem 2rem;
-    margin: 1em;
+
     transition: all 300ms;
 }
 
 button:hover {
     background-color: hsl(36, 100%, 50%);
 }
+
+@media only screen and (min-width: 980px) {
+    body {
+        padding: 0 20%;
+        font-size: 24px;
+    }
+
+    header { text-align: left; }
+
+    footer { text-align: right; }
+
+    .game {
+        margin: 0 40% 0 10%;
+        justify-content: center;
+        gap: 3rem;
+    }
+
+    .choices {
+      flex-direction: row;
+    }
+  }

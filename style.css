@@ -31,8 +31,9 @@ header, footer {
 }
 
 .game {
-    margin: 0 20%;
-    justify-content: space-around;
+    margin: 0 15%;
+    justify-content: center;
+    gap: 3rem;
     flex: 1;
 }
 
@@ -82,8 +83,6 @@ button:hover {
 
     .game {
         margin: 0 40% 0 10%;
-        justify-content: center;
-        gap: 3rem;
     }
 
     .choices {

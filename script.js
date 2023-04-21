@@ -39,7 +39,7 @@ button.forEach(button => {
         let computerChoice = getComputerChoice();
         
         round(playerChoice,computerChoice);
-        
+
         message.textContent = result;
         log.innerHTML = (`You chose ${playerChoice}, <n> The computer chose ${computerChoice}.`);
         scoreboard.innerHTML = (`you: ${playerScore} computer: ${computerScore}`);
@@ -89,16 +89,18 @@ function round(playerChoice, computerChoice) {
     return result;
 };
 
-function end() {
+const end = async () => {
     const reset = () => {
         hide('.game');
         show('.start');
 
     };
     if (playerScore >= 5) {
+        await delay(300);
         alert('You Win!');
         reset();
     } else if (computerScore >= 5) {
+        await delay(300);
         alert ('You Lose!');
         reset();
     };

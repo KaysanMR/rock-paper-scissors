@@ -9,9 +9,6 @@ function getComputerChoice() {
     return CHOICES[choice];
 };
 
-
-
-
 const message = document.querySelector('.message');
     message.textContent = 'Welcome to Rock Paper Scissors!';
 

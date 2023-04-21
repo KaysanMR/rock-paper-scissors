@@ -34,7 +34,7 @@ header, footer {
     justify-content: center;
     gap: 3rem;
     flex: 1;
-    transition: all 2s;
+    transition: all 1s;
 }
 
 .gameText {
@@ -45,6 +45,14 @@ header, footer {
 .choices {
     justify-content: space-between;
     gap: 1rem;
+}
+
+#start {
+    position: fixed;
+    top: 50%;
+    align-self: center;
+    max-width: fit-content;
+    background-color: green;
 }
 
 button {

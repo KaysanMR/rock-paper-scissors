@@ -54,7 +54,7 @@ header, footer {
     top: 50%;
     align-self: center;
     max-width: fit-content;
-    background-color: green;
+    background-color: hsl(120, 100%, 25%);
     transition: all 500ms;
 }
 

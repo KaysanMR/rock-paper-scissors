@@ -30,29 +30,31 @@ header, footer {
 
 .game {
     visibility: hidden;
+    opacity: 0;
     margin: 0 15%;
     justify-content: center;
     gap: 3rem;
     flex: 1;
-    transition: all 1s;
+    transition: all 2s;
 }
 
 .gameText {
     gap: 1rem;
 }
 
-
 .choices {
     justify-content: space-between;
     gap: 1rem;
 }
 
-#start {
+.start {
+    visibility: visible;
     position: fixed;
     top: 50%;
     align-self: center;
     max-width: fit-content;
     background-color: green;
+    transition: all 500ms;
 }
 
 button {

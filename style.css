@@ -9,7 +9,6 @@ body {
     min-height: 100dvh;
     background-color: rgb(255, 253, 250);
     color: hsl(145, 60%, 25%);
-    flex-direction: column;
 }
 
 .flex {
@@ -30,19 +29,18 @@ header, footer {
 }
 
 .game {
+    visibility: hidden;
     margin: 0 15%;
     justify-content: center;
     gap: 3rem;
     flex: 1;
+    transition: all 2s;
 }
 
 .gameText {
     gap: 1rem;
 }
 
-.log {
-    flex-direction: column;
-}
 
 .choices {
     justify-content: space-between;

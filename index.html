@@ -8,14 +8,15 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
-<body class="flex">
+<body class="flex" onclick="toggleHide('.game');">
+
     <header class="flex">
         <h1 class="bigText">Rock / Paper / Scissors</h1>
     </header>
+
     <div class="game flex">
         <div class="gameText flex">
-            <div class="log flex">
-            </div>
+            <div class="log flex"></div>
             <div class="message bigText">Welcome to Rock Paper Scissors!</div>
             <div class="score">you: 0 <n> computer: 0</div>
             <div class="choices flex">
@@ -25,6 +26,7 @@
             </div>
         </div>
     </div>
+
     <footer class="flex"><a href="https://github.com/KaysanMR/" class="bigText">[github.com/KaysanMR]</a></footer>
 </body>
 </html>

@@ -9,14 +9,18 @@ function getComputerChoice() {
     return CHOICES[choice];
 };
 
+
+
+
 const message = document.querySelector('.message');
-message.textContent = 'Welcome to Rock Paper Scissors!';
+    message.textContent = 'Welcome to Rock Paper Scissors!';
 
 const log = document.querySelector('.log');
-log.textContent = 'choose an option to begin :)'
+    log.textContent = 'choose an option to begin :)'
 
 const scoreboard = document.querySelector('.score');
 
+//game function
 const button = document.querySelectorAll('#btn');
 button.forEach(button => {
     button.addEventListener('click',(e) => {
@@ -31,7 +35,16 @@ button.forEach(button => {
     });
 });
 
-
+const toggleHide = (element) => {
+    const hide = document.querySelector(element);
+    if (hide.style.visibility === "hidden") {
+        hide.style.visibility = "visible";
+        hide.style.opacity = 1;
+    } else {
+        hide.style.opacity = 0;
+        hide.style.visibility = "hidden";
+    };
+};
 
 // decide on the winner
 function round(playerChoice, computerChoice) {

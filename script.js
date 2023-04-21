@@ -106,6 +106,12 @@ const end = async () => {
     };
 };
 
+const announce = async () => {
+    hide('.game');
+    hide('.start');
+
+    const text = document.createTextNode("Win Text")
+};
 
 //legacy functions
 

@@ -48,6 +48,7 @@ header, footer {
 }
 
 .start {
+    font-size: 2rem;
     visibility: visible;
     position: fixed;
     top: 50%;
